@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Platform, View } from "react-native";
+import { Text, StyleSheet, Platform, View, SafeAreaView } from "react-native";
 import {
   NavigationContainer,
   useNavigationContainerRef
@@ -39,10 +39,16 @@ export default function HomeScreen() {
   useReactQueryDevTools(queryClient);
 
   return (
-    <View style={{ flex: 1 }}>
-      {/* App content */}
-      <NotFoundScreen />
-    </View>
+    <SafeAreaView className="flex-1 justify-center items-center bg-gray-200">
+      <View className="w-100 h-100 bg-blue-500">
+        {/* flex-1 flex-col justify-center items-center text-green-300 w-10 h-10 bg-blue-200 text-xl */}
+
+        <Text className="color-red-100 text-xl ">Hai tailwind!!!!</Text>
+
+        {/* <NotFoundScreen /> */}
+        <Text>Hai pink</Text>
+      </View>
+    </SafeAreaView>
 
     //devtools plugins
     // <NavigationContainer ref={navRef}>
@@ -63,19 +69,11 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
   titleContainer: {
-    flexDirection: "row",
+    flex: 1,
+    flexDirection: "column",
+    justifyContent: "center",
     alignItems: "center",
-    gap: 8
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: "absolute"
+    backgroundColor: "white"
+    // gap: 8
   }
 });
