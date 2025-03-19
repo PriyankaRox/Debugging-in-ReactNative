@@ -15,6 +15,8 @@ import { useReactQueryDevTools } from "@dev-plugins/react-query";
 import devToolsEnhancer from "redux-devtools-expo-dev-plugin";
 import { configureStore } from "@reduxjs/toolkit";
 
+import { remapProps } from "nativewind";
+
 //redux plugin
 // const store = configureStore({
 //   reducer: rootReducer,
@@ -38,13 +40,18 @@ export default function HomeScreen() {
 
   useReactQueryDevTools(queryClient);
 
+  //nativewind remapProps
+  /**
+  ThirdPartyButton is a component with two "style" props, buttonStyle & labelStyle.
+  We can use remapProps to create new props that accept Tailwind CSS's classNames.
+ */
+
   return (
     <SafeAreaView className="flex-1 justify-center items-center bg-gray-200">
       <View className="w-100 h-100 bg-blue-500">
         {/* flex-1 flex-col justify-center items-center text-green-300 w-10 h-10 bg-blue-200 text-xl */}
 
         <Text className="color-red-100 text-xl ">Hai tailwind!!!!</Text>
-
         {/* <NotFoundScreen /> */}
         <Text>Hai pink</Text>
       </View>
